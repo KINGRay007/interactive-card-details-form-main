@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+   <!-- CONTAINER 📌-->
+    <main class="container" id="container">
+       <!-- CARDS 📌-->
+        <section class="card-section" id="card-section">
+           <!-- FRONT CARDS 📌-->
+            <div class="front-card">
+                
+                <figure class="front-card-logo">
+                    <img src="./images/card-logo.svg" alt="card logo">
+                </figure>
+                <!-- FRONT CARDS DATA 📌-->
+                <div class="front-card-data">
+                    <h2 class="front-card-numb" id="card_number">
+                        0000 0000 0000 0000
+                    </h2>
+                    <h3 class="front-card-name" id="card_name">
+                        JANE APPLESEED
+                    </h3>
+                    <div class="front-card-exp">
+                        <h3 class="front-card-exp-date" id="exp_month">
+                            00
+                        </h3>
+                        <span class="front-card-exp-span">/</span>
+                        <h3 class="front-card-exp-date" id="exp_year">
+                            00
+                        </h3>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- BACK CARDS DATA 📌-->
+            <div class="back-card">
+                <h2 class="back-card-numb" id="cvc_number">
+                    000
+                </h2>
+            </div>
+        </section>
+        <!-- FORM SECTION 📌-->
+        <section>
+           <!-- FORM DATA 📌-->
+            <form action="#" class="form" id="form">
+                <!-- FORM NAME 📌-->
+                <label for="name">CARDHOLDER NAME</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    class="form-name-input" 
+                    id="name" 
+                    maxlength="25" 
+                    placeholder="e.g. Jane Appleseed"
+                >
+                <span class="span_error" id="name_error"></span>
+                <!-- FORM NUMBER 📌-->
+                <label for="number">CARD NUMBER</label>
+                <input 
+                    type="text" 
+                    name="number" 
+                    class="form-number-input" 
+                    id="number" 
+                    minlength="19" 
+                    maxlength="19" 
+                    placeholder="e.g. 1234 5678 9123 0000"
+                >
+                <span class="span_error" id="number_error"></span>
+                <!-- FORM (--EXP/CVC--) 📌-->
+                <div class="form-exp-cvc">
+                    <!-- FORM EXP 📌-->
+                    <div class="form-exp">
+                        <label for="month">EXP. DATE (MM/YY)</label>
+                        <input 
+                            type="number" 
+                            name="month" 
+                            class="form-exp-month" 
+                            id="month"
+                            minlength="2" 
+                            maxlength="2" 
+                            placeholder="MM"
+                            oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        >
+                        <input 
+                            type="number" 
+                            name="year" 
+                            id="year" 
+                            minlength="2" 
+                            maxlength="2" 
+                            placeholder="YY"
+                            oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        >
+                        <span class="span_error" id="exp_error"></span>
+                    </div>
+                    <!-- FORM CVC 📌-->
+                    <div class="form-cvc">
+                        <label for="cvc">CVC</label>
+                        <input 
+                            type="text" 
+                            name="cvc" 
+                            id="cvc" 
+                            maxlength="3"
+                            minlength="3" 
+                            placeholder="e.g. 123"
+                            oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        >
+                        <span class="span_error" id="cvc_error"></span>
+                    </div>
+                </div>
+                <!-- CONFIRM BUTTON 📌-->
+                <button type="submit" class="btn" id="submit_btn">
+                    Confirm
+                </button>
+            </form>
+            <!-- THANK YOU SECTION ✔️📌-->
+            <div class="thankyou-txt hidden">
+                <figure class="thankyou-img">
+                    <img src="./images/icon-complete.svg" alt="complete"> 
+                 </figure>
+                <h2 class="thankyou-title">
+                    THANK YOU!
+                </h2>
+                <p class="thankyou-p">
+                    We've added your card details
+                </p>
+                <button class="thankyou-btn" id="ctn-btn">
+                    Continue
+                </button>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/imask" defer></script>
+    <script src="func.js" defer></script>
+</body>
+</html>

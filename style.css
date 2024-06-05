@@ -1,0 +1,641 @@
+/*
+*********************
+   GENERAL STYLE 📌
+*********************
+*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+
+
+:root{
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --linear-gradient-active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --red-input-errors: hsl(0, 100%, 66%);
+    --pink: hsl(339, 78%, 37%);
+}
+
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--white);
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 33.55% 100%;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/*
+*****************
+   CONTAINER 📌
+*****************
+*/
+.container{
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    height:fit-content;
+}
+
+/*
+**************************
+   CARDS SECTION STYLE📌
+**************************
+*/
+.card-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 100%;
+}
+
+.front-card{
+    width: 447px;
+    height: 245px;
+    margin-bottom: 2.313rem;
+    margin-right: 6.813rem;
+    padding: 1.75rem 2rem;
+    border-radius: 10px;
+    background-image: url(./images/bg-card-front.png);
+    background-size: 102%;
+    box-shadow: 0 0.5rem 5rem -0.5rem rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease-in-out;
+    z-index: 10;
+}
+/*
+***********************
+  FRONT CARD STYLE 📌
+***********************
+*/
+.front-card-data{
+    margin-top: 3.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.front-card-numb{
+    width: 100%;
+    margin-bottom: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 0.248rem;
+}
+
+.front-card-name{
+    font-size: .85rem;
+    font-weight: 300;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+}
+
+.front-card-exp{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.front-card-exp-date{
+    margin-left: auto;
+    font-size: .85rem;
+    font-weight: 300;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+}
+
+.front-card-exp-span{
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-right: 0.15rem;
+}
+/*
+***********************
+  BACK CARDS STYLE 📌
+***********************
+*/
+.back-card{
+    width: 447px;
+    height: 245px;
+    margin-right: 0.938rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10px;
+    background-image: url(images/bg-card-back.png);
+    box-shadow: 0.5rem 2rem 8rem -1rem rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease-in-out;
+}
+
+.back-card-numb{
+    margin-right: 3.56rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.14rem;
+}
+/*
+*****************
+  FORM STYLE 📌
+*****************
+*/
+.form{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    width: 100%;
+    padding-top: 5.5rem;
+    padding-left: 7rem;
+    transition: all 0.25s ease-in-out;
+}
+
+label{
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 550;
+    letter-spacing: 0.125rem;
+}
+
+input::placeholder{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.016rem;
+    color: var(--dark-grayish-violet);
+    opacity: 0.4;
+}
+
+input:focus{
+    outline-color: 1px solid var(--dark-grayish-violet);
+}
+
+input{
+    margin-bottom: 1.65rem;
+    padding: 0.1rem 0 0.05rem 0.95rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.015rem;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 8px;
+}
+
+.error{
+    outline: 1px solid var(--red-input-errors);
+}
+
+
+
+.error_message::after{
+    position: relative;
+    content: "";
+    color: var(--red-input-errors);
+    font-size: 0.76rem;
+    letter-spacing: -0.002rem;
+    margin-top: 0.2rem;
+    bottom: 1.15rem; 
+}
+
+.span_error{
+    position: relative;
+    bottom: 1.15rem;
+    font-size: .76rem;
+    letter-spacing: -.002rem;
+    color: var(--red-input-errors);
+}
+
+.form-name-input{
+    width: 381px;
+    height: 45px;
+}
+
+.form-number-input{
+    width: 381px;
+    height: 45px;
+    padding-top: 0.06rem;
+}
+
+.form-exp-cvc{
+    display: flex;
+    width: 100%;
+    margin-top: -1px;
+    margin-bottom: 0.9rem; 
+}
+
+.form-exp{
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    justify-content: space-between;
+    width: 170px;
+    margin-right: 20px;
+}
+
+.form-exp > input{
+    width: 80px;
+    height: 45px;
+    padding-right: .8rem;
+    margin-left: 0;
+}
+
+.form-exp > span{
+    order: 2;
+}
+
+.form-exp-month{
+    margin-right: 0.6rem;
+}
+
+.form-cvc{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-cvc > input{
+    width: 191px;
+    height: 45px;
+}
+
+
+/*
+******************
+  BUTTON STYLE 📌
+******************
+*/
+.btn{
+    width: 381px;
+    height: 53px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.06rem;
+    letter-spacing: 0.032rem;
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+}
+
+.btn:hover{
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--pink);
+    transition: all 0.25s ease-in-out;
+}
+
+/*
+*************************
+  THANK YOU STYLE ✔️📌
+*************************
+*/
+.thankyou-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    width: 381px;
+    padding: 7.4rem 7.1rem 0 0;
+    padding-top: 5.5rem;
+    color: var(--very-dark-violet);
+    transition: all 0.3s ease-in-out;
+}
+
+.thankyou-txt{ 
+    margin: 1.9rem 0 2.9rem 0;
+    margin-left: 11rem;
+}
+
+.thankyou-title{
+    margin-bottom: .93rem;
+    margin-top: 2rem;
+    font-size: 1.72rem;
+    font-weight: 600;
+    letter-spacing: .231rem;
+}
+
+.thankyou-p{
+    font-size: 1.1rem;
+    letter-spacing: 0.019rem;
+    margin-bottom: 3rem;
+    color: var(--dark-grayish-violet);
+}
+/*
+*****************************
+  THANK YOU BUTTON STYLE 📌
+*****************************
+*/
+.thankyou-btn{
+    width: 381px;
+    height: 53px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.06rem;
+    letter-spacing: 0.032rem;
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+}
+
+.thankyou-btn:hover{
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--pink);
+    transition: all 0.25s ease-in-out;
+}
+
+/*
+****************************
+  MEDIA QUERY 🖥️ 💻 📱 📌
+****************************
+*/
+@media screen and (max-width: 1200px){
+    /*
+    **********************
+      CARD SECTION STYLE
+    **********************
+    */
+    .card-section{
+        transform: scale(0.9);
+        width: 55%;
+    }
+    
+    .front-card{
+        margin-right: 4.5rem;
+    }
+    /*
+    ***************
+      FORM STYLE
+    ***************
+    */
+    .form{
+        padding-left: 1rem;
+    }
+    /*
+    ************************
+      THANK YOU STYLE
+    ************************
+    */
+    
+    .thankyou-txt{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 380px;
+        margin-left: 7rem;
+        
+    }
+
+    .thankyou-title{
+        margin-top: 2rem;
+    }
+
+    .thankyou-p{
+        margin-bottom: 3rem;
+    }
+
+    .thankyou-btn{
+        max-width: 381px;
+    }
+}
+
+@media screen and (max-width: 980PX){
+    /*
+    *****************
+      GENERAL STYLE
+    *****************
+    */
+    body{
+        min-height: 900px;
+        height: 100%;
+        background-size: 100% 33.55%;
+    }
+    /*
+    *******************
+      CONTAINER STYLE
+    *******************
+    */
+    .container{
+        height: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /*
+    **********************
+      CARDS SECTION STYLE
+    **********************
+    */
+    .card-section{
+        width: 535px;
+        height: fit-content;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    /*
+    ********************
+      FRONT CARD STYLE
+    ********************
+    */
+    .front-card{
+        margin: 0;
+        align-self: flex-start;
+        position: relative;
+        top: -6.6rem;
+    }
+    /*
+    *******************
+      BACK CARD STYLE
+    *******************
+    */
+    .back-card{
+        margin: 0;
+        align-self: flex-end;
+    }
+    /*
+    **************
+      FORM STYLE
+    **************
+    */
+    .form{
+        width: 100%;
+        max-width: 391px;
+        margin: -5rem 4rem 0 4rem;
+        margin-top: 5px;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .form > label{
+        align-self: flex-start;
+    }
+    
+    .form-exp-cvc{
+        justify-content: center;
+    }
+    
+    .span-err{
+        align-self: flex-start;
+    }
+   /*
+    *******************
+      THANK YOU STYLE
+    *******************
+    */
+    .thankyou-txt{
+        width: 100%;
+        max-width: 381px;
+        margin: -5rem 4rem 0 4rem;
+        margin-top: 5px;
+        padding: 0;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 540px){
+    /*
+    *****************
+      GENERAL STYLE
+    *****************
+    */
+    body{
+        align-items: flex-start;
+        background-image: url(images/bg-main-mobile.png);
+        min-height: 670px;
+        height: 100%;
+        background-size: 100% 240px;
+        overflow: hidden;
+    }
+    
+    .container{
+        width: fit-content;
+    }
+    /*
+    **********************
+      CARDS SECTION STYLE
+    **********************
+    */
+    .card-section{
+        width: fit-content;
+        margin-top: -0.71rem;
+        overflow: hidden;
+    }
+    /*
+    ********************
+      FRONT CARD STYLE
+    ********************
+    */
+    .front-card{
+        align-self: flex-end;
+        transform: scale(0.73);
+        top: -9.72rem;
+        left: -1.7rem;
+    }
+    /*
+    *******************
+      BACK CARD STYLE
+    *******************
+    */
+    .back-card{
+        align-self: flex-start;
+        transform: scale(0.73);
+        position: relative;
+        right: -1.7rem;
+    }
+    /*
+    **************
+      FORM STYLE
+    **************
+    */
+    .form{
+        max-width: 335px;
+        margin: -6.95rem 0 0 0;
+    }
+    
+    input{
+        margin-bottom: 1.27rem;
+    }
+    
+    .form-name-input{
+        width: 100%;
+        height: 45px;
+    }
+    
+    .form-number-input{
+        width: 100%;
+        height: 45px;
+    }
+    
+    .form-exp{
+        width: 60%;
+        margin-right: 0.45rem;
+    }
+    
+    .form-exp-month{
+        margin-right: 0.35rem;
+    }
+    
+    .form-exp > input{
+        width: 47%;
+    }
+    
+    .form-cvc{
+        width: 40%;
+    }
+    
+    .form-cvc > input{
+        width: 100%;
+    }
+    
+    .form-exp-cvc{
+        margin-bottom: .49rem;
+    }
+    
+    .btn{
+        width: 100%;
+    }
+    
+    /*
+    *******************
+      THANK YOU STYLE
+    *******************
+    */
+    .thankyou-txt{
+        max-width: 335px;
+        margin: -6.95rem 0 0 0;
+    }
+
+    .thankyou-title{
+        margin-top: 2rem;
+    }
+
+    .thankyou-p{
+        margin-bottom: 3rem;
+    }
+
+    .thankyou-btn{
+        width: 320px;
+    }
+}
